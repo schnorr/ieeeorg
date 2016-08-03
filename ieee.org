@@ -1,0 +1,136 @@
+# -*- coding: utf-8 -*-
+# -*- mode: org -*-
+
+#+TITLE: Title (appears only in the PDF properties)
+#+AUTHOR: Lucas Mello Schnorr
+
+#+STARTUP: overview indent
+#+LANGUAGE: pt-br
+#+OPTIONS: H:3 creator:nil timestamp:nil skip:nil toc:nil num:t ^:nil ~:~
+#+OPTIONS: author:nil title:nil date:nil
+#+TAGS: noexport(n) deprecated(d) ignore(i)
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+
+#+LATEX_CLASS: IEEEtran
+#+LATEX_CLASS_OPTIONS: [conference,letter,10pt,final]
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+
+# You need Org 8.3.5 and Emacs 24 to make this work.
+# If you do, just type make (thanks Luka Stanisic for this).
+
+* IEEETran configuration for org export + ignore tag (Start Here)  :noexport:
+
+#+begin_src emacs-lisp :results output :session :exports both
+(add-to-list 'load-path ".")
+(require 'ox-extra)
+(ox-extras-activate '(ignore-headlines))
+(add-to-list 'org-latex-classes
+             '("IEEEtran"
+               "\\documentclass{IEEEtran}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+#+end_src
+
+#+RESULTS:
+
+* *The Paper*                                                       :ignore:
+** Latex configurations                                             :ignore:
+** Frontpage                                                        :ignore:
+#+BEGIN_LaTeX
+\title{This is the Real Title}
+
+\author{
+\IEEEauthorblockN{
+   Lucas Mello Schnorr\IEEEauthorrefmark{1},
+   Somebody Else\IEEEauthorrefmark{2}}
+
+\IEEEauthorblockA{\IEEEauthorrefmark{1}
+Graduate Program in Computer Science (PPGC/UFRGS), Porto Alegre, Brazil}
+
+\IEEEauthorblockA{\IEEEauthorrefmark{2}
+Somebody else's Institution, Brazil}
+}
+#+END_LaTeX
+
+#+LaTeX: \maketitle
+
+** Abstract                                                         :ignore:
+
+#+LaTeX: \begin{abstract}
+
+Put the abstract here.
+
+#+LaTeX: \end{abstract}
+
+** Introduction
+
+This is just an example to show how Orgmode\cite{orgmode} can be
+neatly used to write papers following the IEEEtran latex style. Feel
+free to modify and distributed this as you wish.
+
+** Background and Experimental Context
+\label{sec.context}
+*** Background
+\label{sec.background}
+*** Experimental Context and Workload Details
+\label{sec.setup}
+** Related Work and Motivation
+\label{sec.relatedwork}
+
+Check this paper\cite{schnorr2013visualizing} about how you need to
+semantically aggregate data.
+
+** Your Great Contribution to Computer Science
+\label{sec.proposal}
+** Your Super Results
+** Conclusion
+** Acknowledgments                                                  :ignore:
+
+#+LATEX:\section*{Acknowledgements}
+
+Who paid for this?
+
+** References                                                        :ignore:
+
+# See next section to understand how refs.bib file is created.
+
+#+LATEX: \bibliographystyle{IEEEtran}
+#+LATEX: \bibliography{refs}
+
+* Bib file is here                                                 :noexport:
+
+Tangle this file with C-c C-v t
+
+#+begin_src bib :tangle refs.bib
+@article{orgmode,
+  author =	"Eric Schulte and Dan Davison and Thomas Dye and Carsten Dominik",
+  title =	"A Multi-Language Computing Environment for Literate Programming and Reproducible Research",
+  journal =	"J. of Stat. Soft.",
+  volume =	"46",
+  number =	"3",
+  day =  	"25",
+  year = 	"2012",
+  CODEN =	"JSSOBK",
+  ISSN = 	"1548-7660",
+  bibdate =	"2011-10-03",
+  accepted =	"2011-10-03",
+  acknowledgement = "",
+  submitted =	"2010-12-22",
+}
+
+@incollection{schnorr2013visualizing,
+  title={Visualizing More Performance Data Than What Fits on Your Screen},
+  author={Schnorr, Lucas M and Legrand, Arnaud},
+  booktitle={Tools for High Performance Computing 2012},
+  pages={149--162},
+  year={2013},
+  publisher={Springer}
+}
+
+
+#+end_src
