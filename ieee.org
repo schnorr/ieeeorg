@@ -17,7 +17,7 @@
 #+LATEX_HEADER: \usepackage[utf8]{inputenc}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 
-# You need Org 8.3.5 and Emacs 24 to make this work.
+# You need at least Org 9 and Emacs 24 to make this work.
 # If you do, just type make (thanks Luka Stanisic for this).
 
 * IEEETran configuration for org export + ignore tag (Start Here)  :noexport:
@@ -41,7 +41,7 @@
 * *The Paper*                                                       :ignore:
 ** Latex configurations                                             :ignore:
 ** Frontpage                                                        :ignore:
-#+BEGIN_LaTeX
+#+BEGIN_EXPORT latex
 \title{This is the Real Title}
 
 \author{
@@ -55,7 +55,7 @@ Graduate Program in Computer Science (PPGC/UFRGS), Porto Alegre, Brazil}
 \IEEEauthorblockA{\IEEEauthorrefmark{2}
 Somebody else's Institution, Brazil}
 }
-#+END_LaTeX
+#+END_EXPORT
 
 #+LaTeX: \maketitle
 
@@ -72,6 +72,13 @@ Put the abstract here.
 This is just an example to show how Orgmode\cite{orgmode} can be
 neatly used to write papers following the IEEEtran latex style. Feel
 free to modify and distributed this as you wish.
+
+Be aware that this example is compatible with OrgMode 9.*. Earlier or
+later OrgMode versions require minor modifications to the Makefile
+and/or ieee.org files.
+
+For a detailed explanation on why and how to write reproducible
+articles using OrgMode, please visit the following [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][page]].
 
 ** Background and Experimental Context
 \label{sec.context}
