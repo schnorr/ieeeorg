@@ -80,20 +80,36 @@ and/or ieee.org files.
 For a detailed explanation on why and how to write reproducible
 articles using OrgMode, please visit the following [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][page]].
 
+Section [[#sec.context]] presents the background.
+
 ** Background and Experimental Context
-\label{sec.context}
+:PROPERTIES:
+:CUSTOM_ID: sec.context
+:END:
+
 *** Background
-\label{sec.background}
+:PROPERTIES:
+:CUSTOM_ID: sec.background
+:END:
+
 *** Experimental Context and Workload Details
-\label{sec.setup}
+:PROPERTIES:
+:CUSTOM_ID: sec.setup
+:END:
+
 ** Related Work and Motivation
-\label{sec.relatedwork}
+:PROPERTIES:
+:CUSTOM_ID: sec.relatedwork
+:END:
 
 Check this paper\cite{schnorr2013visualizing} about how you need to
 semantically aggregate data.
 
 ** Your Great Contribution to Computer Science
-\label{sec.proposal}
+:PROPERTIES:
+:CUSTOM_ID: sec.proposal
+:END:
+
 ** Your Super Results
 ** Conclusion
 ** Acknowledgments                                                  :ignore:
