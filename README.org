@@ -7,3 +7,32 @@ and/or ieee.org files.
 
 For a detailed explanation on why and how to write reproducible
 articles using OrgMode, please visit the following [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][page]].
+
+* Org-ref Instalation
+
+Moreover, this org template uses the package =org-ref= to add and
+control references instead of using latex =\cite= directly. 
+To install it you must have =elpa= ou =melpa= in your emacs repositories and execute the following commands:
+
+#+begin_src emacs-lisp
+M-x package-refresh-contents
+M-x package-install [enter]
+bibtex-completion
+M-x package-install [enter]
+org-ref
+M-x package-install [enter]
+doi-utils
+#+end_src
+
+/*M-x is equivalent to Alt+x/
+
+To insert a citation you can use:
+
+#+begin_src emacs-lisp
+C-c ]
+#+end_src
+
+/*C-c is equivalent to Control+c/
+
+Select the reference by typing a pattern to find or navigate using the keyboard, and when selecting the desired one, use =F2=.
+Also, you can include directly in the text by using =cite:my_ref=.
