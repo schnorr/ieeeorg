@@ -73,7 +73,7 @@ Put the abstract here.
 
 ** Introduction
 
-This is just an example to show how Orgmode\cite{orgmode} can be
+This is just an example to show how Orgmode cite:orgmode can be
 neatly used to write papers following the IEEEtran latex style. Feel
 free to modify and distributed this as you wish.
 
@@ -106,7 +106,7 @@ Section [[#sec.context]] presents the background.
 :CUSTOM_ID: sec.relatedwork
 :END:
 
-Check this paper\cite{schnorr2013visualizing} about how you need to
+Check this paper cite:schnorr2013visualizing  about how you need to
 semantically aggregate data.
 
 ** Your Great Contribution to Computer Science
@@ -126,14 +126,24 @@ Who paid for this?
 
 # See next section to understand how refs.bib file is created.
 
-#+LATEX: \bibliographystyle{IEEEtran}
-#+LATEX: \bibliography{refs}
+[[bibliographystyle:IEEEtran]]
+[[bibliography:refs.bib]]
 
+* Emacs setup                                                      :noexport:
+# Local Variables:
+# eval: (add-to-list 'load-path ".")
+# eval: (require 'ox-extra)
+# eval: (ox-extras-activate '(ignore-headlines))
+# eval: (require 'org-ref)
+# eval: (require 'doi-utils)
+# eval: (setq org-latex-pdf-process (list "latexmk -pdf %f"))
+# eval: (add-to-list 'org-export-before-processing-hook (lambda (be) (org-babel-tangle)))
+# End:
 * Bib file is here                                                 :noexport:
 
 Tangle this file with C-c C-v t
 
-#+begin_src bib :tangle refs.bib
+#+begin_src bibtex :tangle refs.bib
 @article{orgmode,
   author =	"Eric Schulte and Dan Davison and Thomas Dye and Carsten Dominik",
   title =	"A Multi-Language Computing Environment for Literate Programming and Reproducible Research",
