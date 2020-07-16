@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # -*- mode: org -*-
 
-#+TITLE: Title (appears only in the PDF properties)
+#+TITLE: Paper Title
 #+AUTHOR: Lucas Mello Schnorr
 
 #+STARTUP: overview indent
@@ -42,7 +42,11 @@
 ** Latex configurations                                             :ignore:
 ** Frontpage                                                        :ignore:
 #+BEGIN_EXPORT latex
-\title{This is the Real Title}
+\makeatletter
+\let\orgtitle\@title
+\makeatother
+
+\title{\orgtitle}
 
 \author{
 \IEEEauthorblockN{
